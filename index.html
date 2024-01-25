@@ -1,0 +1,84 @@
+<!--
+  Eu quero um site de controle de investimento
+  Onde o usuário possa digitar suas compras e vendas de ações e consultar sua carteira de ações e 
+  fundos imobiliários
+  Também deve mostrar o preço médio e se a variação é positiva ou negativa
+  Essa variação deve estar em porcentagem
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  </meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Guia do Investidor</title>
+</head>
+
+<body class="index">
+  <header>
+    <nav class="flex">
+      <ul class="flex">
+        <li><a class="menu" href="./assets/acoes.html">Ações</a></li>
+        <li><a class="menu" href="../assets/fii.html">Fundo Imobiliário</a></li>
+        <li><a class="menu" href="../assets/rendaFixa.html">Renda Fixa</a></li>
+        <li><a class="menu" href="../assets/stocks.html">Ativos Internacionais</a></li>
+      </ul>
+      <button><a class="menu" href="../assets/admin.html">Negociar Ativos</a></button>
+    </nav>
+  </header>
+  <main>
+    <div class="tag-list">
+      <div class="inner">
+          <div class="tag">IBOVESPA
+            <div class="valor">120.415<span>pts</span></div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">IFIX
+            <div class="valor">3.325<span>pts</span></div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">DÓLAR
+            <div class="valor"><span>R$</span>4,82</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">EURO
+            <div class="valor"><span>R$</span>5,58</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">BITCOIN
+            <div class="valor"><span>R$</span>132.156,28</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">VALE3
+            <div class="valor"><span>R$</span>85,45</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">BBAS3
+            <div class="valor"><span>R$</span>51,91</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">ITUB4
+            <div class="valor"><span>R$</span>13,65</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+          <div class="tag">GGBR3
+            <div class="valor"><span>R$</span>9,84</div>
+            <div class="variacao">+1,53%</div>
+          </div>
+      </div>
+      <div class="fade"></div>
+    </div>
+    <h1>Guia do Investidor</h1>
+    <h3>Tudo que você precisa para controlar seus investimentos</h3>
+    <p>O guia do investidor foi desenvolvido para facilitar a vida do investidor brasileiro. Você pode gerenciar seus ativos da melhor maneira possível.</p>
+  </main>
+  <footer>
+    <cite>&copy;2024 Guia do Investidor. Todos os direitos reservados. Site desenvolvido por R Cristaldo Desenvolvimento Web.</cite>
+  </footer>
+</body>
+
+</html>
