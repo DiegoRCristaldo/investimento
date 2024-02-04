@@ -1,3 +1,4 @@
+/*Conteúdo geral do site*/
 *{
     margin: 0;
     border: 0;
@@ -6,11 +7,15 @@
 body{
     max-width: 1440px;
     margin: 0 auto;
+    text-align: center;
 }
 .index{
     background-image: url('../data/img/index.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
 }
+
+/*Início do Carrosseul de indices da bolsa*/
 .tag-list{
     margin-top: 2rem;
     width: 100%;
@@ -52,22 +57,17 @@ div.variacao{
     inset: 0;
     pointer-events: none;
 }
-@keyframes loop {
-    0%{
-        transform: translateX(100%);
-    }
-    25%{
-        transform: translateX(50%);
-    }
-    50%{
-        transform: translateX(0%);
-    }
-    75%{
-        transform: translateX(-50%);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
+/*Fim do Carrosseul de indices da bolsa*/
+
+/*Início do Conteúdo Central*/
+div.conteudo-principal{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+div.texto-principal{
+    width: 40%;
+    margin: 5%;
 }
 h2{
     margin: 4px 0;
@@ -75,104 +75,58 @@ h2{
     color: #ffffff;
     background-color: #000000;
 }
-.flex{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-}
-a{
-    text-decoration: none;
-    color: #ffffff;
-    cursor: hand;
-}
-.menu{
-    border-style: none;
-    border-radius: 30px;
-    padding: 4px 8px;
-    text-align: center;
-    font-size: 15px;
-    background-color: #ff7700;
-    text-decoration: none;
-    box-shadow: 3px 3px 15px #ffffff;
-    cursor: hand;
-}
-a:hover{
-    background-color: #ffffff;
-    text-decoration: none;
-    color: #7777ff;
-}
-.menu:hover{
-    background-color: #ffffff;
-    text-decoration: none;
-    color: #ff7700;
-}
-button{
-    background: none;
-}
 h1{
     color: #ffffff;
     margin-top: 124px;
     font-size: 50px;
-}
-h4{
-    color: #ffffff;
-    margin-top: 48px;
-}
-p{
-    color: #ffffff;
-    margin-top: 24px;
-    line-height: 32px;
-}
-footer{
-    color: #ffffff;
-    text-align: center;
-}
-cite{
-    font-size: 20px;
-}
-.preto{
-    color: #000000;
-}
-.acoes{
-    background-image: url('../data/img/acoes.webp');
-}
-.fii{
-    background-image: url('../data/img/fii.jpeg');
-}
-.rendaFixa{
-    background-image: url('../data/img/rendaFixa.webp');
-}
-.stocks{
-    background-image: url('../data/img/stocks.jpg');
-}
-.aprenda{
-    background-image: url('../data/img/aprenda.webp');
-}
-.index, .acoes, .fii, .rendaFixa, .stocks, .aprenda {
-    background-size: cover;
-}
-#acoes{
-    display: none;
 }
 h3{
     text-align: center;
     margin-top: 50px;
     color: white;
 }
-.quadro{
-    width: 350px;
-    height: 200px;
-    border: solid 1px #000000;
-    margin: 0 25px;
+p{
+    color: #ffffff;
+    margin-top: 24px;
+    line-height: 32px;
 }
+/*Fim do Conteúdo Central*/
+
+/*Início da tela de login*/
+div.login{
+    width: 40%;
+    margin: 5%;
+    padding: 2rem;
+    color: #e2e8f0;
+    border: 1px solid #e2e8f0;
+    border-radius: 40px;
+    background-color: rgba(34, 5, 251, 0.2);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+input{
+    margin: 1rem;
+    line-height: 1.5rem;
+    border-radius: 30px;
+}
+/*Fim da tela de login*/
+
 footer{
-    width: 100%;
-    height: 10rem;
+    width: 90%;
     background-color: #000;
     position: relative;
-    float: inline-end;
+    color: #ffffff;
+    padding: 2rem;
+    float: left;
 }
-@keyframes marqueeTicker {
+cite{
+    font-size: 20px;
+}
+
+@keyframes loop {
     0%{
         transform: translateX(100%);
     }
