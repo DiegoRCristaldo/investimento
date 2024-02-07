@@ -1,8 +1,8 @@
 /*Conteúdo geral do site*/
 *{
     margin: 0;
-    border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     max-width: 1440px;
@@ -17,7 +17,7 @@ body{
 
 /*Início do Carrosseul de indices da bolsa*/
 .tag-list{
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
     height: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -69,33 +69,29 @@ div.texto-principal{
     width: 40%;
     margin: 5%;
 }
-h2{
-    margin: 4px 0;
-    font-size: 24px;
-    color: #ffffff;
-    background-color: #000000;
-}
 h1{
     color: #ffffff;
-    margin-top: 124px;
+    background-color: rgba(34, 5, 251, 0.2);
     font-size: 50px;
+    padding: 2rem;
+    margin-top: 1rem;
 }
 h3{
     text-align: center;
-    margin-top: 50px;
     color: white;
+    padding: 0.5rem;
 }
 p{
     color: #ffffff;
-    margin-top: 24px;
     line-height: 32px;
+    padding: 1rem;
 }
 /*Fim do Conteúdo Central*/
 
 /*Início da tela de login*/
 div.login{
     width: 40%;
-    margin: 5%;
+    margin: 0 5%;
     padding: 2rem;
     color: #e2e8f0;
     border: 1px solid #e2e8f0;
@@ -103,27 +99,60 @@ div.login{
     background-color: rgba(34, 5, 251, 0.2);
 }
 form{
+    padding: 2rem;
+}
+div.coluna{
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+}
+div.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+h2{
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: #ffffff;
 }
 input{
     margin: 1rem;
     line-height: 1.5rem;
     border-radius: 30px;
+    padding: 0.5rem;
+}
+button{
+    background-color: #d04205;
+    padding: 0.8rem;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px #c5b8b3;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0.5rem 0.5rem;
+}
+button:hover{
+    color: #d04205;
+    background-color: #ffffff;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+    align-items: center;
+    padding: 1rem;
 }
 /*Fim da tela de login*/
 
 footer{
-    width: 90%;
+    width: 100%;
     background-color: #000;
     position: relative;
     color: #ffffff;
     padding: 2rem;
-    float: left;
+    margin-top: 5.3rem;
 }
 cite{
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 @keyframes loop {
@@ -141,5 +170,85 @@ cite{
     }
     100%{
         transform: translateX(-100%);
+    }
+}
+@media (max-width: 375px) {
+    form{
+        padding: 0.8rem;
+    }
+    div.row{
+        flex-direction: column;
+    }  
+}
+@media (max-width: 475px) {
+    div.conteudo-principal{
+        flex-direction: column;
+        align-items: center;
+    }   
+    div.texto-principal, div.login{
+        width: 95%;
+    }
+    h1{
+        font-size: 28px;
+    }
+    p{
+        line-height: 16px;
+        padding: 1rem 0;
+    }
+    div.login{
+        padding: 0.2rem;
+        border-radius: 30px;
+    }
+    form{
+        padding: 1rem;
+    }
+    h2{
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+    input{
+        margin: 0.3rem;
+        line-height: 0.5rem;
+        border-radius: 20px;
+        padding: 0.5rem;
+    }
+    button{
+        padding: 0.5rem;
+        border-radius: 25px;
+        margin: 0.3rem;
+    }
+    cite{
+        font-size: 1rem;
+    }   
+}
+@media (max-width: 768px) {
+    form{
+        padding: 0.5rem;
+    }
+    input{
+        margin: 0.3rem 0;
+        line-height: 0.5rem;
+        padding: 0.5rem 0.2rem;
+    }
+    div.row{
+        flex-direction: column;
+    }
+    button{
+        width: 100%;
+    }
+}
+@media (max-width: 1024px) {
+    form{
+        padding: 1rem;
+    }
+    input{
+        margin: 0.3rem 0;
+        line-height: 0.5rem;
+        padding: 0.5rem;
+    }
+    button{
+        padding: 0.3rem;
+        border-radius: 25px;
+        margin: 0.3rem 0.1rem;
     }
 }
