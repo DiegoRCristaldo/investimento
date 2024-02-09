@@ -14,6 +14,15 @@
         $email = $_POST['email'];
         $telefone = $_POST['telefone'];
     }
+    $carteira = {
+        $acoes;
+        $fiis;
+        $renda_fixa;
+        $stocks;
+        $cripto;
+        $opcoes;
+        $bdr;
+    }
     ?>
 </body>
 </html>

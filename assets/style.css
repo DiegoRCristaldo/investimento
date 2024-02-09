@@ -154,10 +154,10 @@ footer{
     position: relative;
     color: #ffffff;
     padding: 2rem;
-    margin-top: 5.3rem;
+    margin-top: 1.5rem;
 }
 cite{
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 @keyframes loop {
     0%{
@@ -181,7 +181,7 @@ body.cadastro{
     max-width: 1440px;
     margin: 0 auto;
     background-image: url('../data/img/stocks.jpg');
-    background-repeat: no-repeat;
+    background-position: center;
 }
 header.cabecalho{
     background-color: rgba(34, 5, 251, 0.2);
@@ -211,7 +211,7 @@ input:hover{
     left: -7px;
 }
 /*Fim do Conteúdo do cadastro*/
-@media (max-width: 375px) {
+@media (max-width: 376px) {
     form{
         padding: 0.8rem;
     }
@@ -219,13 +219,15 @@ input:hover{
         flex-direction: column;
     }  
 }
-@media (max-width: 475px) {
+@media (max-width: 426px) {
     div.conteudo-principal{
+        display: flex;
         flex-direction: column;
         align-items: center;
     }   
     div.texto-principal, div.login{
         width: 95%;
+        margin: 7rem auto;
     }
     h1{
         font-size: 2.5rem;
@@ -241,6 +243,7 @@ input:hover{
     div.login{
         padding: 0.2rem;
         border-radius: 30px;
+        margin-bottom: 1rem;
     }
     form{
         padding: 1rem;
@@ -262,7 +265,14 @@ input:hover{
     }
     cite{
         font-size: 1rem;
-    }   
+    }
+    /*Inicio do Conteúdo do cadastro*/
+    form.formulario{
+        width: 95%;
+    }
+    input.layout, button.layout{
+        width: 80%;
+    }
 }
 @media (max-width: 768px) {
     div.login{
