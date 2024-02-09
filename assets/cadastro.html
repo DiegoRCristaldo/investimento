@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro - Guia Financeiro</title>
+</head>
+<body class="cadastro">
+    <header class="cabecalho">
+        <nav>
+            <a href="../index.html"><h1 class="titulo">Guia Financeiro</h1></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form class="formulario" action="../data/banco.php" method="post">
+                <label for="nome"></label>
+                <input class="layout" type="text" name="nome" id="nome" placeholder="Nome Completo">
+    
+                <label for="usuario"></label>
+                <input class="layout" type="text" name="usuario" id="usuario" placeholder="Defina seu login">
+    
+                <label for="senha"></label>
+                <input class="layout" type="password" name="senha" id="senha" placeholder="Senha">
+
+                <label for="senha"></label>
+                <input class="layout" type="password" name="senha" id="senha" placeholder="Confirmar Senha">
+    
+                <label for="email"></label>
+                <input class="layout" type="email" name="email" id="email" placeholder="E-mail">
+    
+                <label for="telefone"></label>
+                <input class="layout" type="tel" name="telefone" id="telefone" placeholder="Número de telefone">
+
+                <button class="layout" type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <cite><a href="https://rcristaldodevweb.netlify.app">&copy;2024 Guia do Investidor. Todos os direitos reservados. Site desenvolvido por R 
+          Cristaldo Desenvolvimento Web.</a></cite>
+    </footer>
+</body>
+</html>

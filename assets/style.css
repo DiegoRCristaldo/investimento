@@ -1,4 +1,4 @@
-/*Conteúdo geral do site*/
+/*Conteúdo index do site*/
 *{
     margin: 0;
     padding: 0;
@@ -26,7 +26,7 @@ body{
 }
 .inner{
     margin: 0 auto;
-    width: fit-content;
+    width: 'fit-content';
     display: flex;
     gap: 1.5rem;
     animation: loop 40s linear infinite;
@@ -68,10 +68,10 @@ div.conteudo-principal{
 div.texto-principal{
     width: 40%;
     margin: 5%;
+    background-color: rgba(34, 5, 251, 0.2);
 }
 h1{
     color: #ffffff;
-    background-color: rgba(34, 5, 251, 0.2);
     font-size: 50px;
     padding: 2rem;
     margin-top: 1rem;
@@ -123,6 +123,7 @@ input{
     padding: 0.5rem;
 }
 button{
+    width: 48%;
     background-color: #d04205;
     padding: 0.8rem;
     border-radius: 50px;
@@ -134,12 +135,16 @@ button{
 button:hover{
     color: #d04205;
     background-color: #ffffff;
+    box-shadow: #d04205;
 }
 a{
     text-decoration: none;
     color: #ffffff;
     align-items: center;
     padding: 1rem;
+}
+a:hover{
+    color: #d04205;
 }
 /*Fim da tela de login*/
 
@@ -154,7 +159,6 @@ footer{
 cite{
     font-size: 1.3rem;
 }
-
 @keyframes loop {
     0%{
         transform: translateX(100%);
@@ -172,6 +176,41 @@ cite{
         transform: translateX(-100%);
     }
 }
+/*Inicio do Conteúdo do cadastro*/
+body.cadastro{
+    max-width: 1440px;
+    margin: 0 auto;
+    background-image: url('../data/img/stocks.jpg');
+    background-repeat: no-repeat;
+}
+header.cabecalho{
+    background-color: rgba(34, 5, 251, 0.2);
+}
+h1.titulo:hover{
+    color: #d04205;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+form.formulario{
+    justify-content: center;
+    align-items: center;
+    color: #e2e8f0;
+    margin: 2rem auto;
+    width: 70%;
+    border-radius: 30px;
+    box-shadow: 3px 3px 3px #d04205;
+    background-color: rgba(34, 5, 251, 0.2);
+
+}
+input.layout, button.layout{
+    width: 50%;
+}
+input:hover{
+    font-size: 0.7rem;
+    position: relative;
+    top: -7px;
+    left: -7px;
+}
+/*Fim do Conteúdo do cadastro*/
 @media (max-width: 375px) {
     form{
         padding: 0.8rem;
@@ -189,10 +228,14 @@ cite{
         width: 95%;
     }
     h1{
-        font-size: 28px;
+        font-size: 2.5rem;
+    }
+    h3{
+        font-size: 1.4rem;
     }
     p{
-        line-height: 16px;
+        line-height: 2rem;
+        font-size: 1rem;
         padding: 1rem 0;
     }
     div.login{
@@ -204,11 +247,10 @@ cite{
     }
     h2{
         margin: 1rem 0;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     input{
         margin: 0.3rem;
-        line-height: 0.5rem;
         border-radius: 20px;
         padding: 0.5rem;
     }
@@ -216,18 +258,22 @@ cite{
         padding: 0.5rem;
         border-radius: 25px;
         margin: 0.3rem;
+        font-size: 1rem;
     }
     cite{
         font-size: 1rem;
     }   
 }
 @media (max-width: 768px) {
+    div.login{
+        padding: 2rem 0.3rem;
+    }
     form{
         padding: 0.5rem;
     }
     input{
         margin: 0.3rem 0;
-        line-height: 0.5rem;
+        line-height: 0.8rem;
         padding: 0.5rem 0.2rem;
     }
     div.row{
