@@ -211,6 +211,42 @@ input:hover{
     left: -7px;
 }
 /*Fim do Conteúdo do cadastro*/
+
+/*Inicio do Conteúdo do Admin*/
+body.admin{
+    max-width: 1440px;
+    margin: 0 auto;
+    background-image: url('../data/img/selic.webp');
+    background-position: center;
+    background-size: cover;
+}
+nav.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #e2e8f0;
+    background-color: rgba(34, 5, 251, 0.2);
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+ul.indice{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+    list-style-type: none;
+}
+li.lista{
+    padding: 0.5rem;
+    box-shadow: 3px 3px 3px #3f05d0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+a.link:hover{
+    color: #3f05d0;
+}
+/*Fim do Conteúdo do Admin*/
+
 @media (max-width: 376px) {
     form{
         padding: 0.8rem;
