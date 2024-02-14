@@ -69,21 +69,24 @@
         <div class="row">
             <div>
                 <h1>Carteira</h1>
+                <div class="chart-container">
+                  <!-- Gráfico de barras -->
+                  <canvas id="barChart" width="400" height="400"></canvas>
+                  <!-- Gráfico de pizza -->
+                  <canvas id="pieChart" width="400" height="400"></canvas>
+              </div>
                 <div>
-                    <div>
-                        Grafico em pizza
-                    </div>
-                    <div>
-                        Grafico de barras
-                    </div>
-                    <div>
                         Lista de ativos
                         ativo
                         preço atual
                         preço médio
                         valorização
-                    </div>
+                  </div>
                 </div>
+            </div>
+            <div>
+              <button onclick="showBarChart()">Gráfico de Barras</button>
+              <button onclick="showPieChart()">Gráfico de Pizza</button>
             </div>
             <div>
                 <form action="../data/banco.html" method="get">
@@ -108,5 +111,7 @@
         <cite><a href="https://rcristaldodevweb.netlify.app">&copy;2024 Guia do Investidor. Todos os direitos reservados. Site desenvolvido por R 
           Cristaldo Desenvolvimento Web.</a></cite>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

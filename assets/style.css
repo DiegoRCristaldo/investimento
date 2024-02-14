@@ -245,6 +245,24 @@ li.lista{
 a.link:hover{
     color: #3f05d0;
 }
+
+/* Estilo para o contêiner dos gráficos */
+.chart-container {
+    display: flex;
+    width: 25rem;
+}
+
+/* Estilo para cada gráfico individual */
+canvas {
+    display: none;
+}
+
+/* Estilo para mostrar o gráfico ativo */
+canvas.active {
+    display: block;
+}
+
+
 /*Fim do Conteúdo do Admin*/
 
 @media (max-width: 376px) {
@@ -256,9 +274,12 @@ a.link:hover{
     }  
 }
 @media (max-width: 426px) {
+    .inner{
+        animation: loop 15s linear infinite;
+    }
     div.conteudo-principal{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
     }   
     div.texto-principal, div.login{
