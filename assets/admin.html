@@ -66,46 +66,51 @@
         </nav>
     </header>
     <main>
-        <div class="row">
-            <div>
-                <h1>Carteira</h1>
-                <div class="chart-container">
-                  <!-- Gráfico de barras -->
-                  <canvas id="barChart" width="400" height="400"></canvas>
-                  <!-- Gráfico de pizza -->
-                  <canvas id="pieChart" width="400" height="400"></canvas>
-              </div>
-                <div>
-                        Lista de ativos
-                        ativo
-                        preço atual
-                        preço médio
-                        valorização
-                  </div>
-                </div>
-            </div>
-            <div>
-              <button onclick="showBarChart()">Gráfico de Barras</button>
-              <button onclick="showPieChart()">Gráfico de Pizza</button>
-            </div>
-            <div>
-                <form action="../data/banco.html" method="get">
-                    <label for="ativo">Nome do ativo:</label>
-                    <input type="text" name="ativo" id="ativo">
-        
-                    <label for="preco">Preço:</label>
-                    <input type="number" name="preco" id="preco">
-        
-                    <label for="compra">Comprar</label>
-                    <input type="radio" name="ordem" id="compra" actived>
-                    
-                    <label for="venda">Vender</label>
-                    <input type="radio" name="ordem" id="venda">
-        
-                    <button type="submit" value="Enviar Ordem">Enviar Ordem</button>
-                </form>
-            </div>
+      <div class="row">
+        <div class="coluna">
+          <h1>Carteira</h1>
+          <div class="chart-container">
+            <!-- Gráfico de barras -->
+            <canvas id="barChart" width="400" height="400"></canvas>
+            <!-- Gráfico de pizza -->
+            <canvas id="pieChart" width="400" height="400"></canvas>
+            <table id="tabela">
+              <thead>
+                <tr class="row">
+                  <th>Ativos</th>
+                  <th>Preço Atual</th>
+                  <th>Preço Médio</th>
+                  <th>Valorização</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+              </tbody>
+            </table>
+          </div>
+          <div class="row">
+            <button onclick="showBarChart()">Gráfico de Barras</button>
+            <button onclick="showPieChart()">Gráfico de Pizza</button>
+            <button onclick="mostrarTabela()">Meus ativos</button>
+          </div>
         </div>
+        <div>
+          <form id="adicionarAtivo" class="coluna">
+            <label for="ativo">Nome do ativo:</label>
+            <input type="text" name="ativo" id="ativo">
+
+            <label for="preco">Preço:</label>
+            <input type="number" name="preco" id="preco">
+
+            <label for="compra">Comprar</label>
+            <input type="radio" name="ordem" id="compra" actived>
+            
+            <label for="venda">Vender</label>
+            <input type="radio" name="ordem" id="venda">
+
+            <button type="submit" value="Enviar Ordem">Enviar Ordem</button>
+          </form>
+        </div>
+      </div>
     </main>
     <footer>
         <cite><a href="https://rcristaldodevweb.netlify.app">&copy;2024 Guia do Investidor. Todos os direitos reservados. Site desenvolvido por R 

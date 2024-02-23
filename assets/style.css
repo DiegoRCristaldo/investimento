@@ -101,7 +101,7 @@ div.login{
 form{
     padding: 2rem;
 }
-div.coluna{
+.coluna{
     display: flex;
     flex-direction: column;
 }
@@ -256,13 +256,42 @@ a.link:hover{
 canvas {
     display: none;
 }
-
-/* Estilo para mostrar o gráfico ativo */
 canvas.active {
     display: block;
 }
+table {
+    display: none;
+    padding: 0.5rem;
+    background-color: rgba(34, 5, 251, 0.2);
+    border-color: rgba(54, 162, 235, 1);
+    border-radius: 1rem;
+    margin: 0.5rem auto;
+    color: #000;
+    border-collapse: collapse;
+    width: 100%;
+}
+/* Estilo para a tabela */
+thead{
+    background-color: rgba(34, 5, 251, 0.3);
+    color: #000;
+    font-size: 1.1rem;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+td{
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: rgba(221, 226, 228, 0.8);
+}
 
-
+/* Estilo para a tabela quando está ativa */
+table.active {
+    display: table;
+}
 /*Fim do Conteúdo do Admin*/
 
 @media (max-width: 376px) {
