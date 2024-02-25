@@ -1,8 +1,40 @@
 // Dados para os gráficos
-let barChartLabels = ['BBAS3', 'PETR4', 'GGBR3', 'OFSA4', 'ETER3'];
-let barChartData = [12, 19, 3, 5, 2];
-let pieChartLabels = ['BBAS3', 'PETR4', 'GGBR3', 'OFSA4', 'ETER3'];
-let pieChartData = [30, 10, 20, 15, 25];
+let graficoBarras = [{
+        ativo: 'BBAS3',
+        quantidade: '100',
+        precoAtual: '50,45',
+        precoMedio: '42,35',
+        valorizacao: '10%'
+    },
+    {
+        ativo: 'PETR4',
+        quantidade: '100',
+        precoAtual: '50,45',
+        precoMedio: '42,35',
+        valorizacao: '10%'
+    },
+    {
+        ativo: 'GGBR3',
+        quantidade: '100',
+        precoAtual: '50,45',
+        precoMedio: '42,35',
+        valorizacao: '10%'
+    },
+    {
+        ativo: 'OFSA4',
+        quantidade: '100',
+        precoAtual: '50,45',
+        precoMedio: '42,35',
+        valorizacao: '10%'
+    },
+    {
+        ativo: 'ETER3',
+        quantidade: '100',
+        precoAtual: '50,45',
+        precoMedio: '42,35',
+        valorizacao: '10%'
+    }];
+let graficoPizza = graficoBarras;
 
 // Variáveis para os gráficos
 let barChart, pieChart, tabela;
@@ -10,13 +42,16 @@ let barChart, pieChart, tabela;
 // Função para criar o gráfico de barras
 function createBarChart() {
     var ctx = document.getElementById('barChart').getContext('2d');
+    let labels = graficoBarras.map(item => item.ativo);
+    let data = graficoBarras.map(item => item.precoAtual.replace(',', '.')); // Precisa substituir a vírgula por ponto para interpretar como número
+
     barChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: barChartLabels,
+            labels: labels,
             datasets: [{
                 label: 'Data',
-                data: barChartData,
+                data: data,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1
@@ -37,12 +72,15 @@ function createBarChart() {
 // Função para criar o gráfico de pizza
 function createPieChart() {
     var ctx = document.getElementById('pieChart').getContext('2d');
+    let labels = graficoPizza.map(item => item.ativo);
+    let data = graficoPizza.map(item => item.precoAtual.replace(',', '.')); // Precisa substituir a vírgula por ponto para interpretar como número
+
     pieChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: pieChartLabels,
+            labels: labels,
             datasets: [{
-                data: pieChartData,
+                data: data,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -75,7 +113,7 @@ function createPieChart() {
 
 // Função para mostrar o gráfico de barras e ocultar o gráfico de pizza
 function showBarChart() {
-    if (pieChart || tabela) {
+    if (pieChart) {
         pieChart.destroy();
         document.getElementById('pieChart').classList.remove('active');
     }
@@ -88,7 +126,7 @@ function showBarChart() {
 
 // Função para mostrar o gráfico de pizza e ocultar o gráfico de barras
 function showPieChart() {
-    if (barChart || tabela) {
+    if (barChart) {
         barChart.destroy();
         document.getElementById('barChart').classList.remove('active');
     }
@@ -99,7 +137,37 @@ function showPieChart() {
     document.getElementById('pieChart').classList.add('active');
 }
 
-function adicionarAtivo(ativo, precoAtual, precoMedio, valorizacao) {
+function mostrarTabela() {
+    if (barChart) {
+        barChart.destroy();
+        document.getElementById('barChart').classList.remove('active');
+    }
+    if (pieChart) {
+        pieChart.destroy();
+        document.getElementById('pieChart').classList.remove('active');
+    }
+    if (tabela) {
+        tabela.classList.remove('active');
+    }
+
+    let tableBody = document.getElementById('tableBody');
+    tableBody.innerHTML = ''; // Limpar tabela
+
+    for (let i = 0; i < graficoBarras.length; i++) {
+        let ativo = graficoBarras[i].ativo;
+        let quantidade = graficoBarras[i].quantidade;
+        let precoAtual = graficoBarras[i].precoAtual;
+        let precoMedio = graficoBarras[i].precoMedio;
+        let valorizacao = graficoBarras[i].valorizacao;
+        
+        adicionarAtivo(ativo, quantidade, precoAtual, precoMedio, valorizacao); // Adiciona ativo com dados de gráfico
+    }
+
+    tabela = document.getElementById('tabela');
+    tabela.classList.add('active');
+}
+
+function adicionarAtivo(ativo, quantidade, precoAtual, precoMedio, valorizacao) {
     let tableBody = document.getElementById('tableBody');
     let newRow = tableBody.insertRow();
 
@@ -107,32 +175,18 @@ function adicionarAtivo(ativo, precoAtual, precoMedio, valorizacao) {
     let cell2 = newRow.insertCell(1);
     let cell3 = newRow.insertCell(2);
     let cell4 = newRow.insertCell(3);
+    let cell5 = newRow.insertCell(4);
 
     cell1.innerHTML = ativo;
-    cell2.innerHTML = precoAtual;
-    cell3.innerHTML = precoMedio;
-    cell4.innerHTML = valorizacao;
+    cell2.innerHTML = quantidade; // Adicionando a quantidade na tabela
+    cell3.innerHTML = precoAtual;
+    cell4.innerHTML = precoMedio;
+    cell5.innerHTML = valorizacao;
 }
 
 function excluirAtivo(index) {
     let tableBody = document.getElementById('tableBody');
     tableBody.deleteRow(index);
-}
-
-function mostrarTabela() {
-    if (barChart || pieChart) {
-        barChart.destroy();
-        pieChart.destroy();
-        document.getElementById('barChart').classList.remove('active');
-        document.getElementById('pieChart').classList.remove('active');
-    }
-    let tableBody = document.getElementById('tableBody');
-    tableBody.innerHTML = ''; // Limpar tabela
-    for (let i = 0; i < barChartLabels.length; i++) {
-        adicionarAtivo(barChartLabels[i], barChartData[i], '', ''); // Adiciona ativo com dados de gráfico
-    }
-    tabela = document.getElementById('tabela');
-    tabela.classList.add('active');
 }
 
 // Inicializar com o gráfico de barras visível
@@ -154,7 +208,7 @@ document.getElementById("adicionarAtivo").addEventListener("submit", function(ev
             adicionarAtivo(ativo, preco, '', '');
         } else if (ordem === "venda") {
             // Determine o índice do ativo a ser removido, se existir
-            let indiceAtivo = barChartLabels.indexOf(ativo);
+            let indiceAtivo = graficoBarras.ativo.indexOf(ativo);
             if (indiceAtivo !== -1) {
                 excluirAtivo(indiceAtivo); // Adicione a função excluirAtivo definida anteriormente
             }
