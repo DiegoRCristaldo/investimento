@@ -1,57 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Admin - Guia Financeiro</title>
-</head>
-<body class="admin">
-    <header>
-        <div class="tag-list">
-            <div class="inner">
-                <div class="tag">IBOVESPA
-                  <div class="valor">120.415<span>pts</span></div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">IFIX
-                  <div class="valor">3.325<span>pts</span></div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">DÓLAR
-                  <div class="valor"><span>R$</span>4,82</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">EURO
-                  <div class="valor"><span>R$</span>5,58</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">BITCOIN
-                  <div class="valor"><span>R$</span>132.156,28</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">VALE3
-                  <div class="valor"><span>R$</span>85,45</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">BBAS3
-                  <div class="valor"><span>R$</span>51,91</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">ITUB4
-                  <div class="valor"><span>R$</span>13,65</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-                <div class="tag">GGBR3
-                  <div class="valor"><span>R$</span>9,84</div>
-                  <div class="variacao">+1,53%</div>
-                </div>
-            </div>
-            <div class="fade"></div>
-          </div>
+<?php
+  require('../../visao/cabecalhoAdmin.php');
+  require('../../visao/carrossel.php');
+?>
         <nav class="menu">
             <div>
-                <h2><a href="admin.html">Guia Financeiro</a></h2>
+                <h2><a href="admin.php">Guia Financeiro</a></h2>
             </div>
             <div>
                 <ul class="indice">
@@ -64,7 +17,6 @@
                 </ul>
             </div>
         </nav>
-    </header>
     <main>
       <div class="row">
         <div class="coluna">
@@ -116,11 +68,5 @@
         </div>
       </div>
     </main>
-    <footer>
-        <cite><a href="https://rcristaldodevweb.netlify.app">&copy;2024 Guia do Investidor. Todos os direitos reservados. Site desenvolvido por R 
-          Cristaldo Desenvolvimento Web.</a></cite>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <?php
+      require('../../visao/rodape.php');
