@@ -16,16 +16,16 @@ class Carrossel {
     public function getTicker(): array {
         // Array para armazenar os dados dos tickers
         $tickers = [
-            /*"IBOVESPA" => $this->fetchDataAcoes("^BVSP"),
+            "IBOVESPA" => $this->fetchDataAcoes("^BVSP"),
             "IFIX" => $this->fetchDataAcoes("IFIX.SA"),
-            "DÓLAR" => $this->fetchDataMoedas("USD"),
+            /*"DÓLAR" => $this->fetchDataMoedas("USD"),
             "EURO" => $this->fetchDataMoedas("EUR"),
-            "BITCOIN" => $this->fetchDataMoedas("BTC"),
+            "BITCOIN" => $this->fetchDataMoedas("BTC"),*/
             "PETR4" => $this->fetchDataAcoes("PETR4"),
             "VALE3" => $this->fetchDataAcoes("VALE3"),
             "BBAS3" => $this->fetchDataAcoes("BBAS3"),
             "ITUB4" => $this->fetchDataAcoes("ITUB4"),
-            "GGBR4" => $this->fetchDataAcoes("GGBR4")*/           
+            "GGBR4" => $this->fetchDataAcoes("GGBR4")         
         ];
 
         return $tickers;
@@ -164,6 +164,6 @@ class Carrossel {
 }
 
 // Uso da classe Carrossel
-$carrossel = new Carrossel();
+$carrossel = new Carrossel($dadosToken);
 $tickers = $carrossel->getTicker();
 ?>

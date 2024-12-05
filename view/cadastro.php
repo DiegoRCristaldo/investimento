@@ -54,58 +54,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Cadastro - Guia do Mercado Financeiro</title>
-</head>
-<body class="cadastro">
-    <header class="cabecalho">
-        <nav>
-            <a href="../index.php"><h1 class="titulo">Guia do Mercado Financeiro</h1></a>
-        </nav>
+<?php
+$paginaAtual = "Cadastro";
+$style = "assets/style.php";
+$view = "url('assets/img/stocks.jpg')";
+require("cabecalho.php");
+?>
+<body class="fundo">
+    <?php
+    $enderecoCadastro = "cadastro.php";
+    $enderecos = [
+        "login.php",
+        "../inicial.php#sobre-nos"
+    ];
+    $listas = [
+        "Acesse sua conta",
+        "Sobre Nós"
+    ];
+    require("header.php");?>
     </header>
     <main>
-        <section>
-            <form class="formulario" method="post">
-                <!-- Exibir mensagem de erro -->
-                <?php if (!empty($erroMensagem)): ?>
-                    <p class="erro" style="color: red;"><?= $erroMensagem; ?></p>
-                <?php endif; ?>
+        <form class="d-flex flex-column align-items-center tela-principal" method="post">
+            <!-- Exibir mensagem de erro -->
+            <?php if (!empty($erroMensagem)): ?>
+                <p class="erro" style="color: red;"><?= $erroMensagem; ?></p>
+            <?php endif; ?>
 
-                <label for="nome"></label>
-                <input class="layout" type="text" name="nome" id="nome" placeholder="Nome Completo">
-    
-                <label for="usuario"></label>
-                <input class="layout" type="text" name="usuario" id="usuario" placeholder="Defina seu login">
-    
-                <label for="senha"></label>
-                <input class="layout" type="password" name="senha" id="senha" placeholder="Senha">
+            <label for="nome"></label>
+            <input type="text" name="nome" id="nome" placeholder="Nome Completo">
 
-                <label for="senha"></label>
-                <input class="layout" type="password" name="confirmar-senha" id="confirmar-senha" placeholder="Confirmar Senha">
-    
-                <label for="email"></label>
-                <input class="layout" type="email" name="email" id="email" placeholder="E-mail">
-    
-                <label for="telefone"></label>
-                <input class="layout" type="tel" name="telefone" id="telefone" placeholder="Número de telefone">
+            <label for="usuario"></label>
+            <input type="text" name="usuario" id="usuario" placeholder="Defina seu login">
 
-                <button class="layout" type="submit" name="cadastrar">Cadastrar</button>
-                <!--Quando o usuário clicar, os dados devem ser salvos no banco de dados-->
-            </form>
-        </section>
+            <label for="senha"></label>
+            <input type="password" name="senha" id="senha" placeholder="Senha">
+
+            <label for="senha"></label>
+            <input type="password" name="confirmar-senha" id="confirmar-senha" placeholder="Confirmar Senha">
+
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="E-mail">
+
+            <label for="telefone"></label>
+            <input type="tel" name="telefone" id="telefone" placeholder="Número de telefone">
+
+            <button class="acesse" type="submit" name="cadastrar">Cadastrar</button>
+            <!--Quando o usuário clicar, os dados devem ser salvos no banco de dados-->
+        </form>
     </main>
-    <footer>
-        <cite>
-          <a href="https://rcdesenvolvimentodigital.com.br">
-            &copy;2024 Guia do Investidor. Todos os direitos reservados. 
-            Site desenvolvido por R Cristaldo Desenvolvimento Digital.
-          </a>
-        </cite>
-    </footer>
-</body>
+    <?php
+    require("../view/rodape.php");
+    ?>
+    </body>
 </html>
